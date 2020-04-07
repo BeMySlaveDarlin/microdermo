@@ -21,6 +21,8 @@ Since this template uses docker containers, all app related commands are called 
 
 To remove all project i dont know for what reason:
 ```bash
+make uninstall
+### or ###
 sudo docker-compose down
 sudo docker system prune -af
 ```
