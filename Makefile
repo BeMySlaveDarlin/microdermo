@@ -14,7 +14,7 @@ uninstall:
 
 restart:
 	@docker-compose down
-	@docker-compose up -d.
+	@docker-compose up -d
 
 compose:
 	@docker-compose exec service_php_fpm composer global require hirak/prestissimo
