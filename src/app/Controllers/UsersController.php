@@ -52,8 +52,9 @@ class UsersController extends Controller
         $user->username = trim($this->request->getPost('username'));
         $user->first_name = trim($this->request->getPost('firstname'));
         $user->last_name = trim($this->request->getPost('lastname'));
-        $user->password_salt = PASSWORD_BCRYPT;
-        $user->password = password_hash($this->request->getPost('password'), $user->password_salt);
+        $user->password_salt = 'salt';
+        $user->password = sha1($this->request->getPost('password'));
+        $user->created = date('Y-m-d H:i:s');
         $user->save();
 
         return $this->response->setJsonContent([
