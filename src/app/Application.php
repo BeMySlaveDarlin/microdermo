@@ -35,6 +35,7 @@ class Application extends Micro
         $users->setHandler(UsersController::class, true);
         $users->get('/users', 'list');
         $users->get('/users/{id}', 'view');
+        $users->post('/users', 'create');
         $this->mount($users);
     }
 

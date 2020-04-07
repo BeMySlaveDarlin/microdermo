@@ -28,6 +28,7 @@ class UsersController extends Controller
             'message' => 'This is users list',
         ]);
     }
+
     public function view(int $id = null): ResponseInterface
     {
         $user = Users::findFirst($id);
@@ -40,7 +41,30 @@ class UsersController extends Controller
                 'last_name',
                 'email',
             ]),
-            'message' => 'This is users list',
+            'message' => "This is users with id #{$id}",
+        ]);
+    }
+
+    public function create(): ResponseInterface
+    {
+        $user = new Users();
+        $user->email = trim($this->request->getPost('email'));
+        $user->username = trim($this->request->getPost('username'));
+        $user->first_name = trim($this->request->getPost('firstname'));
+        $user->last_name = trim($this->request->getPost('lastname'));
+        $user->password_salt = PASSWORD_BCRYPT;
+        $user->password = password_hash($this->request->getPost('password'), $user->password_salt);
+        $user->save();
+
+        return $this->response->setJsonContent([
+            'success' => true,
+            'data' => $user->toArray([
+                'id',
+                'first_name',
+                'last_name',
+                'email',
+            ]),
+            'message' => "User with id #{$user->id} created",
         ]);
     }
 }
