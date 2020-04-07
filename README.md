@@ -12,7 +12,7 @@
  - Install [Docker](https://docs.docker.com/install/overview/)
  - Install [Docker-compose](https://docs.docker.com/compose/install/)
  - Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
- - Clone this project locally
+ - Clone this project locally `git clone https://github.com/BeMySlaveDarlin/microdermo`
  - Run **`make install`** in project root
  - It will say you need bunch of **`.env`** files
  - Find **`.env.example`** files and copy to `.env` at same path
@@ -20,6 +20,7 @@
 
 ## Usage / Commands
 Since this template uses docker containers, all app related commands are called inside the container.
+
 To remove all project i dont know for what reason:
 ```bash
 sudo docker-compose down
@@ -71,4 +72,5 @@ Full docs can be found at [Phinx](https://book.cakephp.org/phinx/0/en/index.html
 
 #### Routes
 This version uses collections as routing entities.
+
 Example routes located at `App\Application::setRoutes()`.
