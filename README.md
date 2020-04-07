@@ -67,6 +67,7 @@ sudo docker-compose exec service_php_fpm vendor/bin/phinx seed:create MyNewSeede
 #applying seed
 sudo docker-compose exec service_php_fpm vendor/bin/phinx seed:run MyNewSeeder
 ```
+Full docs can be found at [Phinx](https://book.cakephp.org/phinx/0/en/index.html).
 
 #### Routes
 This version uses collections as routing entities.
