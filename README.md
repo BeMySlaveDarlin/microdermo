@@ -14,9 +14,7 @@
  - Install [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
  - Clone this project locally `git clone https://github.com/BeMySlaveDarlin/microdermo`
  - Run **`make install`** in project root
- - It will say you need bunch of **`.env`** files
- - Find **`.env.example`** files and copy to `.env` at same path
- - Fill them with actual data and run **`docker-compose up --build`** again
+ - Find `.env` and place ur variables
 
 ## Usage / Commands
 Since this template uses docker containers, all app related commands are called inside the container.
