@@ -1,0 +1,6 @@
+# Ignore composer local files
+vendor
+
+# Sensitive files and folders
+.env
+.env.testing
